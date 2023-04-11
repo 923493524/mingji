@@ -1,0 +1,64 @@
+server:
+  port: 8080
+
+#????druid ??:http://localhost:8080/driud
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306/hotel_manage?useSSL=false&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+      username: root
+      password: root
+      initial-size: 5
+      max-active: 20
+      min-idle: 10
+      max-wait: 10
+      #???????????????????????????????
+      time-between-eviction-runs-millis: 60000
+    #????swagger???????
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+    format:
+      date: yyyy-MM-dd HH:mm:ss
+
+    #??json??????????
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+
+#??mybatis-plus
+mybatis-plus:
+  id-type: auto #id生成规则：数据库id自增
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true #开启驼峰功能
+    auto-mapping-behavior: full # 自动映射任何复杂的结果
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.lmq.weixinminiproject.entity
+#????
+#pagehelper
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+#swagger??:  ??: localhost:8080/swagger-ui/index.html
+swagger:
+  #????????????swagger??
+  base-package: com.lmq.weixinminiproject.controller
+  #??????????????
+  title: "??swagger??"
+  #??
+  description: "??swagger??????"
+  #????
+  version: "2.0"
+  #???
+  contact:
+    #??
+    name: "AAA"
+    #??
+    email: "test@163.com"
+    # ??????
+    url: "https://www.baidu.com"
+  #??????
+  terms-of-service-url: "?????https://www.baidu.com"
