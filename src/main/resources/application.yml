@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8088
 
 #????druid ??:http://localhost:8080/driud
 spring:

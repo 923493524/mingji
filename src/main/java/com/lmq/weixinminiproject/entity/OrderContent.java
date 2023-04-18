@@ -14,6 +14,5 @@ public class OrderContent implements Serializable {
     private String orderId;
     private Integer roomId;
     private Integer roomNumber;
-    private Integer goodsId;
-    private Integer goodsNumber;
+
 }

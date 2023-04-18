@@ -17,4 +17,8 @@ public class Hotel implements Serializable {
     private String hotelPic;
     private String hotelCreateTime;
     private String hotelUpdateTime;
+    private String sheng;
+    private String shi;
+    private String qu;
+
 }
