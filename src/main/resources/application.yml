@@ -1,5 +1,12 @@
 server:
   port: 8088
+  ssl:
+    #true表示开启HTTPS访问
+    enabled: true
+    #指定证书
+    key-store: classpath:tsaiduck.cn.jks #classpath:ssl证书文件名
+    key-store-password: 769buyd6gx #ssl证书的密钥
+    key-store-type: JKS
 
 #????druid ??:http://localhost:8080/driud
 spring:
