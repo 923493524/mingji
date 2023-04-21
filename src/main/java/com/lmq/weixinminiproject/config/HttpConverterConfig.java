@@ -18,9 +18,9 @@ public class HttpConverterConfig implements WebMvcConfigurer {
 
             registry.addResourceHandler("/img/**").addResourceLocations("classpath:/static/img/");
             // 磁盘目录
-            String path = "D:/ruoyi/uploadPath/";
+            String path = "C:/img/";
             // 将网页地址栏中的 /image/**  映射到  磁盘的某个目录下，以访问磁盘资源
-            registry.addResourceHandler("/profile/**").addResourceLocations("file:" + path);
+            registry.addResourceHandler("/image/**").addResourceLocations("file:" + path);
 
         }
 

@@ -1,4 +1,5 @@
 server:
+#  666
   port: 8088
   ssl:
     #true表示开启HTTPS访问
@@ -15,6 +16,7 @@ spring:
       url: jdbc:mysql://localhost:3306/hotel_manage?useSSL=false&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
       username: root
       password: root
+#      ding1479649104
       initial-size: 5
       max-active: 20
       min-idle: 10
