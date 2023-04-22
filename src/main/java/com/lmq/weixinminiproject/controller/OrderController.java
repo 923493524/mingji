@@ -1,11 +1,8 @@
 package com.lmq.weixinminiproject.controller;
 
 import com.lmq.weixinminiproject.entity.Order;
-import com.lmq.weixinminiproject.entity.OrderContent;
 import com.lmq.weixinminiproject.entity.Result;
-import com.lmq.weixinminiproject.service.IOrderContentService;
 import com.lmq.weixinminiproject.service.IOrderService;
-import org.mockito.internal.matchers.Or;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -19,12 +16,11 @@ import java.util.Random;
 public class OrderController {
     @Autowired
     private IOrderService orderService;
-    @Autowired
-    private IOrderContentService orderContentService;
+
 
     @ResponseBody
     @RequestMapping("/insertorder")
-    public Result insertorder(Order order, OrderContent orderContent) {
+    public Result insertorder(Order order) {
         //创建对象
         Calendar calendar = Calendar.getInstance();
         // 获取当前年
@@ -58,9 +54,7 @@ public class OrderController {
         System.out.println("订单号："+orderId);
 
         order.setOrderId(orderId);
-        orderContent.setOrderId(orderId);
         orderService.insertorder(order);
-        orderContentService.insertordercontent(orderContent);
         return Result.success(orderId,1);
     }
 
