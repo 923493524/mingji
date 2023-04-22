@@ -2,7 +2,7 @@ package com.lmq.weixinminiproject.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.lmq.weixinminiproject.entity.Order;
-import com.lmq.weixinminiproject.entity.OrderContent;
+
 import com.lmq.weixinminiproject.mapper.OrderMapper;
 import com.lmq.weixinminiproject.service.IOrderService;
 import org.springframework.stereotype.Service;
