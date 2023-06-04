@@ -82,8 +82,9 @@ public class UserController {
     public Result getOpenid(@RequestParam(value = "code", required = false) String code) {
 
         //向微信后台发起请求获取openid的url
-        String WX_URL = "https://api.weixin.qq.com/sns/jscode2session?appid=APPID&secret=SECRET&js_code=JSCODE&grant_type=authorization_code";
-
+        String WX_URL =
+                "https://api.weixin.qq.com/sns/jscode2session?appid=APPID&secret=SECRET&js_code=JSCODE" +
+                        "&grant_type=authorization_code";
         //替换appid，appsecret，和code
         String requestUrl =
                 WX_URL.replace("APPID", "wx6e3f7e8e66103b37").

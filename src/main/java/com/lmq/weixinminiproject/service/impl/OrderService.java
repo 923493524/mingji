@@ -17,8 +17,13 @@ public class OrderService extends ServiceImpl<OrderMapper, Order> implements IOr
     }
 
     @Override
-    public int updatetypebyorderid(String orderType,String orderId) {
-        return this.getBaseMapper().updatetypebyorderid(orderType,orderId);
+    public int updatetypebyorderid(String orderPrice,String orderType,String orderId) {
+        return this.getBaseMapper().updatetypebyorderid(orderPrice,orderType,orderId);
+    }
+
+    @Override
+    public int updatepricebyorderid(String orderPrice, String endTime, String orderId) {
+        return this.getBaseMapper().updatepricebyorderid(orderPrice,endTime,orderId);
     }
 
     @Override
@@ -29,5 +34,11 @@ public class OrderService extends ServiceImpl<OrderMapper, Order> implements IOr
     @Override
     public Order selectbyorderid(String orderId) {
         return this.getBaseMapper().selectbyorderid(orderId);
+    }
+
+
+    @Override
+    public List<Order> selectall() {
+        return this.getBaseMapper().selectall();
     }
 }

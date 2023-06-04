@@ -14,14 +14,20 @@ public interface OrderMapper extends BaseMapper<Order> {
             "value(#{orderId},#{userId},#{hotelId},#{hotelName},#{roomId},#{roomName},#{roomNumber},#{orderPrice},#{orderPaid},#{orderType},#{orderRemarks},#{startTime},#{endTime},#{occupantList},#{occupantTel},#{occupantTime})")
     int insertorder(Order order);
 
-    @Update("update h_order set order_type = #{orderType} where order_id = #{orderId}")
-    int updatetypebyorderid(String orderType,String orderId);
+    @Update("update h_order set order_type = #{orderType},order_paid = #{orderPrice} where order_id = #{orderId}")
+    int updatetypebyorderid(String orderPrice,String orderType,String orderId);
+
+    @Update("update h_order set order_price = #{orderPrice},end_time = #{endTime} where order_id = #{orderId}")
+    int updatepricebyorderid(String orderPrice,String endTime,String orderId);
 
     @Select("select * from h_order where user_id = #{userId}")
     List<Order> selectallbyuserid(Order order);
 
     @Select("select * from h_order where order_id = #{orderId}")
     Order selectbyorderid(String orderId);
+
+    @Select("select * from h_order")
+    List<Order> selectall();
 
 
 }

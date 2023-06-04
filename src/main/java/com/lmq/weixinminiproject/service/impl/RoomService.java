@@ -21,4 +21,14 @@ public class RoomService extends ServiceImpl<RoomMapper, Room> implements IRoomS
     public Room selectbyroomid(Room room) {
         return this.getBaseMapper().selectbyroomid(room);
     }
+
+    @Override
+    public int addroomNumberbyroomid(String roomId) {
+        return this.getBaseMapper().addroomNumberbyroomid(roomId);
+    }
+
+    @Override
+    public int subroomNumberbyroomid(String roomId) {
+        return this.getBaseMapper().subroomNumberbyroomid(roomId);
+    }
 }

@@ -14,6 +14,8 @@ public class Order implements Serializable {
     private Integer hotelId;
     private String hotelName;
     private Integer roomId;
+    private Integer roomNumber;
+    private String roomName;
     private Integer orderPrice;
     private Integer orderPaid;
     private String orderType;

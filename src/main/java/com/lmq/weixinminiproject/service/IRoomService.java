@@ -10,4 +10,8 @@ public interface IRoomService extends IService<Room> {
     List<Room> selectbyhotelid(Hotel hotel);
 
     Room selectbyroomid(Room room);
+
+    int addroomNumberbyroomid(String roomId);
+
+    int subroomNumberbyroomid(String roomId);
 }
